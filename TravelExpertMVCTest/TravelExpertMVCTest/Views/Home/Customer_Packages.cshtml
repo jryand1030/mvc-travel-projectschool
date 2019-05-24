@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TravelExpertMVCTest.Models.Customers_Packages>
+
+@{
+    ViewBag.Title = "Customer_Packages";
+    decimal total = 0.0m;
+    decimal price = 0.0m;
+    foreach (var item in Model)
+    {
+        price = item.Package.PkgBasePrice;
+        total = total + price;
+    }
+}
+
+@Styles.Render("~/Content/packages.css")
+
+<h2 class="text-center">Your Travel Packages</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.CustFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Package.PkgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Package.PkgBasePrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package.PkgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package.PkgBasePrice)
+            </td>
+            <td>
+                @Html.ActionLink("Remove", "Remove", new { id = item.CustomerPackageId })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>The total amount is: @total.ToString("c")</p>

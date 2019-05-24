@@ -1,0 +1,42 @@
+﻿body{
+    color:black;
+
+    background-attachment:fixed;
+    background-size:cover;
+}
+
+.item{
+    width:auto;
+    height:400px;
+    background-size:cover;
+
+}
+.carouseltext{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:xx-large;
+    color:white;
+
+}
+.carouseltext2{
+   
+    color:whitesmoke;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:x-large
+}
+
+img{
+    background-size:cover;
+    height:300px;
+    width:300px;
+}
+ul{
+    list-style:none;
+}
+.social-icons{
+    margin:10px;
+    
+}
+.fab{
+    margin:40px;
+}
+

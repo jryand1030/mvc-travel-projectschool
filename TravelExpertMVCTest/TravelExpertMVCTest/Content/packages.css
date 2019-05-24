@@ -1,0 +1,19 @@
+﻿.card{
+    border:solid;
+    margin:10px;
+
+    min-height:100%;
+    background-color:white;
+}
+.btn{
+    align-items:center;
+    width:100%;
+}
+
+body{
+    background-color:rgba(128, 128, 128, .75);
+}
+h2{
+    font-family:'Arial Rounded MT';
+ 
+}

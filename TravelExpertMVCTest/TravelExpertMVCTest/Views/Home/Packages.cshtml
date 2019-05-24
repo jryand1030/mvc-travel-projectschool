@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TravelExpertMVCTest.Models.Package>
+
+@{
+    ViewBag.Title = "Packages";
+}
+@Styles.Render("~/Content/packages.css")
+
+
+<h2 class="text-center">Our Packages</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+
+
+
+
+                <div class="card card-price">
+                    <div class="card-img">
+                        <img src="http://placeimg.com/640/320/nature/grayscale" class="img-responsive">
+                        <div class="card-caption text-center">
+                            <span class="h2">    @Html.DisplayFor(modelItem => item.PkgName)</span>
+                            <p>@Html.DisplayFor(modelItem => item.PkgDesc)</p>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="price"><p class="text-center">Start:@Html.DisplayFor(modelItem => item.PkgStartDate)</p></div>
+                        <div class="price"><p class="text-center">End: @Html.DisplayFor(modelItem => item.PkgEndDate)</p> </div>
+                        
+                        <ul class="details">                          
+                            <li>Price:@Html.DisplayFor(modelItem => item.PkgBasePrice)</li>
+                        </ul>
+                         @Html.ActionLink("Buy", "Buy", new { id = item.PackageId }, new { @class = "btn btn-md btn-primary"}) 
+                       
+                    </div>
+                </div>
+
+
+            </div>
+        }
+    </div>
+</div>
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PkgBasePrice)
+        </th>
+        <th></th>
+    </tr>*@
+
+
+
+@*</table>*@
